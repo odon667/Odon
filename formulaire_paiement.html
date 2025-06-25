@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de Paiement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Formulaire de Paiement</h2>
+        <form action="traitement_paiement.php" method="post">
+            <label for="nom">Nom complet :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="telephone">Numéro de téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="+243..." required>
+
+            <label for="methode">Méthode de paiement :</label>
+            <select id="methode" name="methode" required>
+                <option value="">-- Choisissez --</option>
+                <option value="orange_money">Orange Money</option>
+                <option value="airtel_money">Airtel Money</option>
+                <option value="mpesa">Mpesa</option>
+            </select>
+
+            <label for="montant">Montant à payer ($) :</label>
+            <input type="number" id="montant" name="montant" required>
+
+            <button type="submit">Payer maintenant</button>
+        </form>
+    </div>
+</body>
+</html>
