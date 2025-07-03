@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Formulaire de Paiement</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="payment-container">
-        <h2>Formulaire de Paiement</h2>
-        <form action="https://odon.onrender.com" method="post">
-            <label for="nom">Nom complet :</label>
-            <input type="text" id="nom" name="nom" required>
+<div class="instructions">
+  <h2>Instructions de paiement</h2>
+<p>Veuillez envoyer le montant sur ce numéros :</p>
 
-            <label for="telephone">Numéro de téléphone :</label>
-            <input type="tel" id="telephone" name="telephone" placeholder="+243..." required>
+<ul>
+  <li><strong>Orange Money :</strong> +243 855059661</li>
+</ul>
 
-            <label for="methode">Méthode de paiement :</label>
-            <select id="methode" name="methode" required>
-                <option value="">-- Choisissez --</option>
-                <option value="orange_money">Orange Money</option>
-                <option value="airtel_money">Airtel Money</option>
-                <option value="mpesa">Mpesa</option>
-            </select>
+<h3>Après avoir payé, envoyez une capture d’écran comme preuve :</h3>
 
-            <label for="montant">Montant à payer ($) :</label>
-            <input type="number" id="montant" name="montant" required>
-
-            <button type="submit">Payer maintenant</button>
-        </form>
-    </div>
-</body>
-</html>
+<a href="https://api.whatsapp.com/send?phone=+243855059661&text=Bonjour, j'ai effectué le paiement. Voici la preuve :"
+   target="_blank" style="display:inline-block; padding:10px 15px; background-color:green; color:white; text-decoration:none; border-radius:5px;">
+  Envoyer la capture sur WhatsApp
+</a>
+</div> 
