@@ -101,35 +101,66 @@ html {
 }
 
 .formulaire-livraison {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 300px;
+  display: none; /* ← Cache le formulaire au chargement */
+}
+
+.formulaire-livraison {
+  max-width: 500px;
+  margin: 40px auto;
   padding: 20px;
-  background: rgb(126, 138, 120);
-  border: 2px solid #141212;
+  background: #ffffff;
   border-radius: 10px;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-#formulaire-livraison:target {
+.formulaire-livraison h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.formulaire-livraison label {
   display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.fermer {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.formulaire-livraison input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.formulaire-livraison button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.formulaire-livraison button:hover {
+  background-color: #218838;
+}
+
+.formulaire-livraison .fermer {
+  float: right;
   text-decoration: none;
-  font-size: 18px;
-  color: #565555;
+  font-size: 20px;
+  color: #888;
+  margin-bottom: 10px;
 }
 
-.fermer:hover {
-  color: rgb(253, 73, 73);
+.formulaire-livraison .fermer:hover {
+  color: #000;
 }
 
 
