@@ -151,6 +151,11 @@ html {
   background-color: #218838;
 }
 
+#formulaire-livraison:target {
+  display: block;
+}
+
+
 .formulaire-livraison .fermer {
   float: right;
   text-decoration: none;
