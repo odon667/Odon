@@ -93,43 +93,42 @@ html {
 /* === Formulaire de livraison === */
 .btn-commander {
   display: inline-block;
-  background-color: #2c8530;
-  color: rgb(234, 233, 233);
+  background-color: #27ae60;
+  color: white;
   padding: 10px 15px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .formulaire-livraison {
-  display: none; /* ← Cache le formulaire au chargement */
-}
-
-.formulaire-livraison {
+  display: none;
   max-width: 500px;
   margin: 40px auto;
-  padding: 20px;
-  background: #dbdbdb;
+  padding: 25px;
+  background: #ffffffee;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1.5s ease;
 }
 
 .formulaire-livraison h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #2c3e50;
 }
 
 .formulaire-livraison label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   font-weight: bold;
+  color: #2c3e50;
 }
 
 .formulaire-livraison input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
@@ -137,7 +136,7 @@ html {
 .formulaire-livraison button {
   width: 100%;
   padding: 12px;
-  background-color: #28a745;
+  background-color: #27ae60;
   color: #fff;
   border: none;
   font-weight: bold;
@@ -148,13 +147,12 @@ html {
 }
 
 .formulaire-livraison button:hover {
-  background-color: #218838;
+  background-color: #219150;
 }
 
 #formulaire-livraison:target {
   display: block;
 }
-
 
 .formulaire-livraison .fermer {
   float: right;
@@ -167,31 +165,47 @@ html {
 .formulaire-livraison .fermer:hover {
   color: #000;
 }
-
-
 /* === Formulaire de paiement (isolé et propre) === */
 .instructions {
-  background-color: #66ad7e;
+  background-color: #f0f9f2;
   padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #1f6e07;
+  border-radius: 12px;
+  border: 1px solid #b5e0c1;
   max-width: 500px;
   margin: 20px auto;
-  font-family: Arial, sans-serif;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease forwards;
 }
 
 .instructions h2, .instructions h3 {
-  color: #333;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #27ae60;
+  padding-bottom: 5px;
 }
 
 .instructions ul {
   list-style: none;
   padding: 0;
+  margin-top: 10px;
 }
 
 .instructions li {
   margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
 }
+
+.instructions li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
   body {
     font-size: 16px;
@@ -199,7 +213,7 @@ html {
 
   .produit, .formulaire, .instructions {
     width: 90% !important;
-    padding: 10px !important;
+    padding: 12px !important;
     margin: 10px auto;
   }
 
@@ -217,16 +231,16 @@ html {
     width: 100%;
     font-size: 16px;
     padding: 12px;
+    border-radius: 8px;
   }
 }
+
 .produits-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   padding: 10px;
 }
-
-
 
 .produit img {
   width: 100%;
