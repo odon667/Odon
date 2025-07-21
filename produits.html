@@ -8,82 +8,109 @@
 </head>
 <body>
 
-<div id="formulaire-livraison" class="formulaire-livraison">
-  <a href="#" class="fermer">✖</a>
+<!-- Formulaire de livraison -->
+<div id="formulaire-livraison" class="formulaire-livraison" style="display: none;">
+  <a href="#" class="fermer" onclick="fermerFormulaireLivraison()">✖</a>
   <h2>Formulaire de Livraison</h2>
   <form action="formulaire_paiement.html" method="get">
-    <label>Nom complet :</label>
-    <input type="text" name="nom" required><br><br>
+    <label for="nom">Nom complet :</label>
+    <input type="text" name="nom" id="nom" required>
 
-    <label>Adresse :</label>
-    <input type="text" name="adresse" required><br><br>
+    <label for="adresse">Adresse :</label>
+    <input type="text" name="adresse" id="adresse" required>
 
-    <label>Référence :</label>
-    <input type="text" name="ville" required><br><br>
+    <label for="ville">Référence :</label>
+    <input type="text" name="ville" id="ville" required>
 
-    <label>Taille :</label>
-    <input type="text" name="code_postal" required><br><br>
+    <label for="code_postal">Taille :</label>
+    <input type="text" name="code_postal" id="code_postal" required>
 
-    <label>Téléphone :</label>
-    <input type="tel" name="telephone" required><br><br>
+    <label for="telephone">Téléphone :</label>
+    <input type="tel" name="telephone" id="telephone" required>
+
+    <!-- Crampon sélectionné -->
+    <input type="hidden" name="produit" id="produit-selectionne">
 
     <button type="submit">Continuer vers le paiement</button>
   </form>
 </div>
 
-  <h1>Nos Produits</h1>
+<h1>Nos Produits</h1>
 
-  
-  <div class="produits-container">
-    <div class="produit">
-      <img src="fond.jpg/adi.jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p>
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
-    <div class="produit">
-      <img src="fond.jpg/Bota de fútbol Nike Phantom GX Elite Dynamic Fit….jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p> 
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
-    <div class="produit">
-      <img src="fond.jpg/Accelerate to the next level wearing PUMA Ultra… (1) - Copie.jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p>
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
-    <div class="produit">
-      <img src="fond.jpg/Tekela v4 Pro FG - Copie.jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p>
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
-    <div class="produit">
-      <img src="fond.jpg/Nike Air Zo.jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p>
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
-    <div class="produit">
-      <img src="fond.jpg/Souliers de foot à crampons Puma Future Ultimate… - Copie.jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p>
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
-    <div class="produit">
-      <img src="fond.jpg/Create brilliance wearing Nike Phantom GX II Pro… - Copie.jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p>
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
-    <div class="produit">
-      <img src="fond.jpg/Ces chassures sont portées par Bukayo Saka et….jpg" alt="Nike Mercurial">
-      <h3>Nike Mercurial</h3>
-      <p>Prix : 79€</p>
-      <a href="#formulaire-livraison" class="btn-commander">Commander</a>
-    </div>
+<div class="produits-container">
+  <div class="produit">
+    <img src="fond.jpg/adi.jpg" alt="Nike Mercurial">
+    <h3>Nike Mercurial</h3>
+    <p>Prix : 79€</p>
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('Nike Mercurial'); afficherFormulaireLivraison();">Commander</a>
   </div>
-  <a href="index.html" class="btn">Retour à l'accueil</a> 
+
+  <div class="produit">
+    <img src="fond.jpg/Bota de fútbol Nike Phantom GX Elite Dynamic Fit….jpg" alt="Nike Phantom GX">
+    <h3>Nike Phantom GX</h3>
+    <p>Prix : 89€</p> 
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('Nike Phantom GX'); afficherFormulaireLivraison();">Commander</a>
+  </div>
+
+  <div class="produit">
+    <img src="fond.jpg/Accelerate to the next level wearing PUMA Ultra… (1) - Copie.jpg" alt="PUMA Ultra">
+    <h3>PUMA Ultra</h3>
+    <p>Prix : 75€</p>
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('PUMA Ultra'); afficherFormulaireLivraison();">Commander</a>
+  </div>
+
+  <div class="produit">
+    <img src="fond.jpg/Tekela v4 Pro FG - Copie.jpg" alt="Tekela v4 Pro">
+    <h3>Tekela v4 Pro</h3>
+    <p>Prix : 82€</p>
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('Tekela v4 Pro'); afficherFormulaireLivraison();">Commander</a>
+  </div>
+
+  <div class="produit">
+    <img src="fond.jpg/Nike Air Zo.jpg" alt="Nike Air Zoom">
+    <h3>Nike Air Zoom</h3>
+    <p>Prix : 90€</p>
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('Nike Air Zoom'); afficherFormulaireLivraison();">Commander</a>
+  </div>
+
+  <div class="produit">
+    <img src="fond.jpg/Souliers de foot à crampons Puma Future Ultimate… - Copie.jpg" alt="Puma Future Ultimate">
+    <h3>Puma Future Ultimate</h3>
+    <p>Prix : 77€</p>
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('Puma Future Ultimate'); afficherFormulaireLivraison();">Commander</a>
+  </div>
+
+  <div class="produit">
+    <img src="fond.jpg/Create brilliance wearing Nike Phantom GX II Pro… - Copie.jpg" alt="Nike Phantom GX II Pro">
+    <h3>Nike Phantom GX II Pro</h3>
+    <p>Prix : 93€</p>
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('Nike Phantom GX II Pro'); afficherFormulaireLivraison();">Commander</a>
+  </div>
+
+  <div class="produit">
+    <img src="fond.jpg/Ces chassures sont portées par Bukayo Saka et….jpg" alt="Nike Saka Edition">
+    <h3>Nike Saka Edition</h3>
+    <p>Prix : 95€</p>
+    <a href="#formulaire-livraison" class="btn-commander" onclick="choisirCrampon('Nike Saka Edition'); afficherFormulaireLivraison();">Commander</a>
+  </div>
+</div>
+
+<a href="index.html" class="btn">Retour à l'accueil</a> 
+
+<!-- Script JS -->
+<script>
+  function choisirCrampon(nomProduit) {
+    document.getElementById('produit-selectionne').value = nomProduit;
+  }
+
+  function afficherFormulaireLivraison() {
+    document.getElementById('formulaire-livraison').style.display = 'block';
+  }
+
+  function fermerFormulaireLivraison() {
+    document.getElementById('formulaire-livraison').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
