@@ -18,14 +18,14 @@
 
   <h3>Après avoir payé, envoyez une capture d’écran comme preuve :</h3>
 
-  <!-- 🔽 Infos du client récupérées depuis le formulaire de livraison -->
+  <!-- Infos du client récupérées depuis le formulaire de livraison -->
   <p><strong>Nom complet :</strong> <span id="nomClient"></span></p>
   <p><strong>Téléphone :</strong> <span id="telClient"></span></p>
   <p><strong>Adresse et Référence :</strong> <span id="adresseClient"></span></p>
   <p><strong>Pointure :</strong> <span id="tailleClient"></span></p>
   <p><strong>Produit :</strong> <span id="produitClient"></span></p>
 
-  <!-- 🔽 Lien WhatsApp -->
+  <!--  Lien WhatsApp -->
   <a id="lienWhatsApp"
      href="#"
      target="_blank"
@@ -34,14 +34,14 @@
   </a>
 </div>
 
-<!-- 🔽 Script JS intégré -->
+<!--  Script JS  -->
 <script>
   function getParam(nom) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(nom);
   }
 
-  // Récupération des données
+  
   const nom = getParam('nom');
   const tel = getParam('telephone');
   const adresse = getParam('adresse');
@@ -49,17 +49,17 @@
   const taille = getParam('code_postal'); // pointure
   const produit = getParam('produit');
 
-  // Insertion dans la page
+  
   document.getElementById('nomClient').textContent = nom;
   document.getElementById('telClient').textContent = tel;
   document.getElementById('adresseClient').textContent = `${adresse}, Réf: ${ville}`;
   document.getElementById('tailleClient').textContent = taille;
   document.getElementById('produitClient').textContent = produit;
 
-  // Création du message WhatsApp
+  
   const message = `Commande crampon:%0A🧑 Nom: ${nom}%0A📞 Téléphone: ${tel}%0A🏠 Adresse: ${adresse}%0A🏷️ Réf: ${ville}%0A👟 Pointure: ${taille}%0A📦 Produit: ${produit}%0A✅ J'ai effectué le paiement, voici la capture.`;
 
-  // Numéro WhatsApp (mets bien ton numéro ici)
+  
   const numeroWhatsApp = "243855059661";
   const lien = `https://wa.me/${numeroWhatsApp}?text=${message}`;
 
