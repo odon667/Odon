@@ -17,7 +17,7 @@ Nous proposons une large gamme de marques reconnues telles que Nike, Adidas, Pum
 
 <a href="produits.html">Voir nos crampons</a>
 
-<!-- ✅ Formulaire de livraison (invisible au début) -->
+<!-- Formulaire de livraison -->
 <div id="formulaire-livraison" class="formulaire-livraison" style="display: none;">
   <a href="#" class="fermer" onclick="fermerFormulaireLivraison()">✖</a> 
   <h2>Formulaire de Livraison</h2>
@@ -37,7 +37,7 @@ Nous proposons une large gamme de marques reconnues telles que Nike, Adidas, Pum
     <label for="telephone">Téléphone :</label>
     <input type="tel" name="telephone" id="telephone" required>
     
-    <!-- ✅ Champ caché pour le nom du crampon -->
+    
     <input type="hidden" name="produit" id="produit-selectionne">
 
     <button type="submit">Continuer vers le paiement</button>
@@ -102,7 +102,7 @@ Nous proposons une large gamme de marques reconnues telles que Nike, Adidas, Pum
   </div>
 </footer>
 
-<!-- ✅ Script JS -->
+<!--  Script JS -->
 <script>
   function choisirCrampon(nomProduit) {
     document.getElementById('produit-selectionne').value = nomProduit;
